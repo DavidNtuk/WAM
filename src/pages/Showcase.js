@@ -1,8 +1,8 @@
 import React from "react";
-import Axios from "axios"
+// import Axios from "axios"
 // import {Link} from "react-router-dom"
 import Home from "./Home/Home";
-import Contact from "../component/Contact";
+// import Contact from "../component/Contact";
 import Card from "../component/Card/Card";
 // import Footer from "../component/Footer";
 import "../component/Card/Card.css"
@@ -34,9 +34,9 @@ const Showcase = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            {/* <div>
                 <Contact />
-            </div>
+            </div> */}
         </div>
    )
 }

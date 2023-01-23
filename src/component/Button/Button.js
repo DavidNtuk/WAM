@@ -11,8 +11,8 @@ const Button = (props) => {
                 color: color || '#ffff',
                 background:bgColor,
                 marginLeft:5,
-                borderRadius:5,
-                fontWeight:'bold',
+                // borderRadius:5,
+                // fontWeight:'bold',
                 width:150,
             }}
             onClick={onClick || onClickHandler}

@@ -2,8 +2,6 @@ import React, {useState, useEffect } from "react";
 import {Link} from "react-router-dom"
 import axios from "axios";
 import "../App.css";
-// import images from "../Api/images";
-// import cardlist from "../Api/cardimages"
 
 
 const Bestsales = () => {
@@ -32,7 +30,7 @@ const Bestsales = () => {
                 {
                     product.map(({image1, unique_id}) =>{
                         return(
-                            <Link to={`/product/${unique_id}`}>
+                            <Link to={`/product/${unique_id}`} key={unique_id}>
                                 <div className="justify-content-center px-3">
                                     <img 
                                         src={image1} 

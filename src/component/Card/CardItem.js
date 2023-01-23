@@ -3,28 +3,47 @@ import "../../App.css"
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import "../../component/Header/custom.css"
+import { useDispatch, useSelector } from "react-redux";
+import {addProduct} from "../../Redux/reducers/cartReducers"
 
-const Carditem = ({ product }) => {
+
+const Carditem = () => {
 
     const[ toggle, setToggle] = useState(true);
 
-    return(
-        <div className='m-1 mb-2 product-card'>
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (product) =>{
+        dispatch(addProduct(product))
+    }
+
+    const products = useSelector((state) => state.allProducts.products)
+    
+    const renderList = products.map((product) =>{
+        
+
+    const {unique_id, image1, title, amount, } = product    
+        return(
+            <div className='m-1 mb-2 product-card' key={unique_id}>
             <div className=''>
-                <img src={product.image1} className="product-img" alt='' />
+                <img src={image1} className="product-img" alt='' />
             </div>
             <div className="d-flex justify-content-between pt-2 align-items-center">
                 <div className="d-flex align-items-center">
                     <img src="img/logo.jpg" className="logo-img" alt='' style={{ width: 40, height: 40 }} />
-                    <Link className="link" to={`/product/${product.unique_id}`}>
-                        <h5 className='px-2'>{`${product.title.substring(0, 30)}...`}</h5>
+                    <Link className="link" to={`/product/${unique_id}`}>
+                        <h5 className='px-2'>{`${title.substring(0, 20)}...`}</h5>
                     </Link>
                 </div> 
-                <h5 className='pb-'>${product.amount}</h5>
+                <h5 className='pb-'>${amount}</h5>
             </div>
             <div className="pt-4 text-center">
                 <Link className="link" to="">
-                    <Button title="Buy Now" bgColor="#000000"/>
+                    <Button 
+                    title="Add to cart" 
+                    bgColor="#000000"
+                    onClick={() =>handleAddToCart(product)}
+                    />
                 </Link>
                 {
                     toggle ? 
@@ -45,6 +64,11 @@ const Carditem = ({ product }) => {
                 }
             </div>
         </div>  
+        )
+    })
+
+    return(
+       <>{renderList}</> 
    )
 }
 
