@@ -8,6 +8,7 @@ import Dash from "../pages/Dashboard"
 
 
 const information = () => {
+
    return(
     <>
         <div className="d-flex">
@@ -28,7 +29,8 @@ const information = () => {
                         <div className="">
                             <div className="pb-4">
                                 <input type="text" /> 
-                                <label className="px-3 pb-2">First Name</label>                                
+                                <label
+                                className="px-3 pb-2">First Name</label>                                
                             </div>
                             <div className="pb-4">
                                 <input type="text" /> 

@@ -19,10 +19,14 @@ import Categories from "./pages/Home/Categories";
 import Footer from "./component/Footer";
 // import Test from "./pages/Test";
 import ProductPage from  "./pages/ProductPage";
+import Cart from "./component/Cart";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const layout = () => {
     return(
         <Router>
+            <ToastContainer/>
             <Navbar />
             <Routes>
                 {/* General Route */}
@@ -37,6 +41,7 @@ const layout = () => {
                 <Route path="/information" element={<Information />}/>
                 <Route path="/itemslist" element={<ListPage />}/>
                 <Route path="/categories" element={<Categories />}/>
+                <Route path="/cart" element={<Cart />}/>
                 {/* <Route path="/test" element={<Test />}/> */}
             </Routes>
             <Footer/>

@@ -1,13 +1,13 @@
 import React, { useState , useEffect} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Cart from '../CartModal';
+// import Cart from '../Cart';
 import '../Header/custom.css';
 import images from '../../Api/images';
 
 
 const Navbar = () => {
-    const[openCart , setOpenCart] = useState(false)
+    // const[openCart , setOpenCart] = useState(false)
 
     // const activeStyle = { border:"2px black solid", };
 
@@ -34,7 +34,7 @@ const Navbar = () => {
         {/* <div className='overlay'></div> */}
         <div className='navbar-expand-lg'>
             <div className='nav-header d-flex justify-content-around pt-4 align-items-center'>
-                <div>
+                <div className='close-nav'>
                     <button 
                         className="navbar-toggler" 
                         type="button" 
@@ -45,10 +45,10 @@ const Navbar = () => {
                 </div>
                 <div className='navbar-brand'>
                     <Link to="/" className="link">
-                        <h2 className=''>King's Hub</h2>
+                        <h2 className=''>Roli Accessories</h2>
                     </Link> 
                 </div>
-                <div className='collapse navbar-collapse justify-content-center' id='navbar' >
+                <div className='collapse navbar-collapse justify-content-center close-nav' id='navbar' >
                     <nav>
                         <ul className='ul-links align-items-center'>
                             <li className='drop-down nav-item px-3 active'>
@@ -60,7 +60,7 @@ const Navbar = () => {
                                             <Link to={`/product/${unique_id}`} key={index} className='link'>
                                                 <li className='p-3 text-center'>
                                                     <img src={image1} key={index} className="dropdown-img" alt='' style={{ width:70, height:70 }} />
-                                                    <h6 className='pt-2'>{title.substring(0,10)}...</h6>
+                                                    <h6 className='pt-2'>{title.substring(0,10 )}...</h6>
                                                 </li>
                                             </Link>
                                         )
@@ -102,18 +102,17 @@ const Navbar = () => {
                 </div>
                 <div className=''>
                         <div className='nav-icon'>
-                            {/* <input type="text" 
-                            className='nav-input'
-                            placeholder="search here..."/> */}
                             <Link to="/information" className='link px-3'>
                                 <i className="fa-solid fa-user"></i>
                             </Link>  
                             <Link to="/categories" className='link px-3'>
                                 <i className="fa-solid fa-bag-shopping"></i>
                             </Link>  
-                            <i
-                            onClick={() => setOpenCart(true)}
-                            className="fas fa-shopping-cart px-3"></i>
+                            <Link to="/cart" className='link px-3'>
+                                <i  
+                                className="fas fa-shopping-cart px-3"></i>
+                                <span className='cart-product-number'>0</span>
+                            </Link>
                         </div>
                         {/* <div className='d-flex'>
                             <Link to="/login" style={{ textDecoration:"none", color:'inherit'}}>
@@ -125,7 +124,7 @@ const Navbar = () => {
                         </div> */}
                     </div>
                 </div>
-           { openCart && <Cart closeCart={setOpenCart}/> }
+           {/* { openCart && <Cart closeCart={setOpenCart}/> } */}
         </div>
         
     </div>

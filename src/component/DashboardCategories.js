@@ -30,7 +30,7 @@ const Contact = () => {
 
    return(
     <div className="col-md-2 m-5">
-    <div className=" dashboardcategories">
+    <div className="dashboardcategories">
         <h3 className="pt-2 text-start px-3"> Categories </h3>      
         <div className="text-center pt-5">
             {
@@ -40,52 +40,19 @@ const Contact = () => {
                         <Link to={`/product/${unique_id}`} className="link">
                             <h6 className="d-inline-block">{title}</h6>
                         </Link> 
-                        <ul className='dropdown-content-dashboard'>
+                        {/* <ul className='dropdown-content-dashboard'>
                             <Link to="" className='link'>
                                 <li className='p-3 text-center'>
                                     <h6 className='pt-2'>{title}</h6>
                                 </li>
                             </Link>                             
-                        </ul>     
+                        </ul>*/}
                     </div>
                 )
                 })
             }
         <div className="border-bottom pt-4"></div>                 
-        </div>
-        <div className="pt-5 text-center">
-            <h3 className="pb-5 text-start px-3"> Brand </h3>
-            <div className="categories-list d-flex align-items-center">
-                <input 
-                    type="checkbox" 
-                    className="" 
-                    id="floatingInput"  
-                    placeholder="Type Email..."
-                    value='roli'
-                    />
-                <label className="px-2">Roli Accessorie</label>
-            </div> 
-            <div className="categories-list d-flex align-items-center">
-                <input 
-                    type="checkbox" 
-                    className="" 
-                    id="floatingInput"  
-                    placeholder="Type Email..."
-                    value='viola'
-                    />
-                <label className="px-2">Viola</label>
-            </div>
-            <div className="categories-list d-flex align-items-center">
-                <input 
-                    type="checkbox" 
-                    className="" 
-                    id="floatingInput"  
-                    placeholder="Type Email..."
-                    value='ella'
-                    />
-                <label className="px-2">Ella</label>
-            </div>              
-        </div>
+    </div>
     </div>     
     </div>
        
