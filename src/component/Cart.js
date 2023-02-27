@@ -2,13 +2,23 @@ import React from "react";
 import {Link} from "react-router-dom"
 import "../App.css"
 import Button from "./Button/Button";
-import { useSelector } from "react-redux";
-// import Button from "./Button/Button";
-// import logo from "../../src/img/logo.jpg"
+import { useDispatch, useSelector } from "react-redux";
+import { emptyProductCart } from "../Redux/reducers/cartReducers";
+import { removeProduct } from "../Redux/reducers/cartReducers";
 
 const Cart = () => {
 
  const cart = useSelector((state) => state.cart);
+
+ const dispatch = useDispatch();
+
+ const handleEmptyCart = (product) =>{
+    dispatch(emptyProductCart(product));
+ }
+
+ const handleRemoveItem =  (product) =>{
+  dispatch( removeProduct(product))
+ }
 
   return (
   <>
@@ -24,10 +34,17 @@ const Cart = () => {
       </div>
     ) : (
       <>
+        <div className="d-flex justify-content-end pb-4 px-5">
+          <Button 
+            title="Empty Cart" 
+            bgColor="#000000"
+            onClick={() =>handleEmptyCart()}
+          />
+        </div>
         <div>
           <div className="titles row pb-5">
             <h3 className="prodct-title col-3">Product</h3>
-            <h3 className="prodct-price col-3">Price</h3>
+            <h3 className="prodct-price col-3"></h3>
             <h3 className="prodct-quantity col-3">Quantity</h3>
             <h3 className="prodct-total col-3">Total</h3>
           </div>
@@ -37,11 +54,14 @@ const Cart = () => {
                 <div className="cart-item pt-2 pb-2 cart-content">
                   <div className="cart-product row align-items-center">
                     <div className="col-3">
+                    <i className="fa fas fa-times px-5"
+                    onClick={() =>handleRemoveItem(product)}
+                    ></i>
                       <img 
                         src={product.image1} 
                         className="logo-img" 
                         alt={product.title} 
-                        style={{ width: 100, height: 100 }} 
+                        // style={{ width: 100, height: 100 }} 
                       />
                     </div>
                     <div className="col-3">
@@ -53,7 +73,7 @@ const Cart = () => {
                         <i
                         className="fas fa-arrow-up arrow-up"></i>
                       </div>
-                      <div className="px-3">{product.quantity}</div>
+                      <h6 className="px-3">{product.quantity}</h6>
                       <div className="">
                         <i
                         className="fas fa-arrow-down arrow-down"></i>
@@ -71,41 +91,8 @@ const Cart = () => {
       </>
     ) }
     
-      {/* <div className="d-flex justify-content-between">
-        <div className="shopping-cart-card pt-4">
-          <div className="cart-content row align-items-center">
-            <div className="col-1">
-                <i
-                className="far fa-times"></i>
-            </div> 
-            <div className="col-2">
-              <img 
-              src="img/logo.jpg" 
-              className="logo-img" 
-              alt='' 
-              style={{ width: 70, height: 70 }} />
-            </div>
-            <div className="col-4 px-3">
-              <h4>Paradex Watch diamond</h4>
-              <span>white</span>
-            </div>
-            <div className="col-3 d-flex">
-              <div className="">
-                <i
-                className="fas fa-arrow-up arrow-up"></i>
-              </div>
-              <div className="px-3">5</div>
-              <div className="">
-                <i
-                className="fas fa-arrow-down arrow-down"></i>
-              </div>
-            </div>
-            <div className="col-2">
-              <h4>$ 500</h4>
-            </div>
-          </div> 
-        </div>
-        <div className="checkout-cart-card">
+      
+        {/* <div className="checkout-cart-card">
         <h3 className="p-3">ORDER SUMMARY</h3>
         <div className="pb-3 pt-3">
           <div className="d-flex justify-content-between p-3">

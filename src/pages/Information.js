@@ -15,7 +15,7 @@ const information = () => {
                 <Dash />
             <div className="p-5 info">
                 <h4 className="pb-3">Your Personal Information</h4>
-                <p className="pb-5">Do not share Info</p>
+                <p className="pb-5 text-primary"><i>Do not share Info</i></p>
                 <div className="info-form">
                     <form>
                         <div className="pb-4">

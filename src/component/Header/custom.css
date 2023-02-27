@@ -106,7 +106,8 @@ li{
 
     .link-header,
     .brand{
-        padding: 20px 0px;
+        padding: 10px 0px;
+        background-color: rgb(255, 140, 0);
     }
 
     .ul-links{

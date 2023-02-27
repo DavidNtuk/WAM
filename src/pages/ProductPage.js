@@ -9,6 +9,8 @@ import axios from 'axios';
 import SideBar from "../component/SideBar";
 // import SuggestCard from "../component/Card/SuggestCard";
 import ProductDescription from "../component/ProductDescription";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../Redux/reducers/cartReducers";
 
 const ProductPage = () => {
     const location = useLocation();
@@ -18,6 +20,12 @@ const ProductPage = () => {
     const[selectedImg , setSelectedImg] = useState('');
     const[product , setProduct] = useState({});
     const[sideImages , setSideImages] = useState([]);
+
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (product) =>{
+        dispatch(addProduct(product))
+    }
 
     useEffect(() => {
         window.scroll(0,0);
@@ -91,9 +99,19 @@ const ProductPage = () => {
                         <div className="mt-4">
                             <div className="pb-4 d-flex ">
                                 <div className="px-2">
-                                    <Button title="Add to Cart" bgColor="#fff" color="#000000" style={{ width: 400 }}/>
+                                    <Button 
+                                        onClick={() =>handleAddToCart(product)}
+                                        title="Add to Cart" 
+                                        bgColor="#fff" 
+                                        color="#000000" 
+                                        style={{ width: 400 }}
+                                    />
                                 </div>
-                                <Button title="Wish List" bgColor="#fff" color="#000000"/>
+                                {/* <Button 
+                                    title="Wish List" 
+                                    bgColor="#fff" 
+                                    color="#000000"
+                                /> */}
                             </div>
                         </div>
                         <hr/>
@@ -101,15 +119,6 @@ const ProductPage = () => {
                             <Accordion product={product} />
                         </div>
                     </div>
-                </div>
-            </div>
-            <div className="">
-                <div>
-                    <h2 className="px-5 pt-4 pb-4 ">People who bought this also got these</h2>
-                </div>
-                <div className="justify-content-center row pb-4">
-                    {/* <SuggestCard/> */} 
-                    {/* You can't use this here, you need to find an alternative approach for this */}
                 </div>
             </div>
             <Contact />
