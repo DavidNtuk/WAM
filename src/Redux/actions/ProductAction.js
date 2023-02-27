@@ -13,3 +13,10 @@ export const selectedProducts = (products) =>{
         payload:products,
     };
 }
+
+export const login = (user) =>{
+    return{
+        type: ActionTypes.LOGIN,
+        payload: user
+    }
+}

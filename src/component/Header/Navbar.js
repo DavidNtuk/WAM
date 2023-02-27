@@ -3,13 +3,12 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 // import Cart from '../Cart';
 import '../Header/custom.css';
-import images from '../../Api/images';
 
 
 const Navbar = () => {
     // const[openCart , setOpenCart] = useState(false)
 
-    // const activeStyle = { border:"2px black solid", };
+    const [loading, setLoading] = useState(false)
 
     const [products , setProducts] = useState([])
 
@@ -19,10 +18,13 @@ const Navbar = () => {
 
     const fetchProducts = async () => {
         try {
+            setLoading(true)
             const response = await axios.get('https://api-v1.devchris.com.ng/api/v1/users/products/list');
             console.log(response.data.data.products.data);
             setProducts(response.data.data.products.data);
+            setLoading(false)
         } catch (error) {
+            setLoading(false)
             console.log(error);
         }
     }
@@ -54,6 +56,7 @@ const Navbar = () => {
                             <li className='drop-down nav-item px-3 active'>
                                 <Link to="#" className='drop-link link'>New Arrivals<i className="fa-solid fa-angle-down px-2"></i></Link>
                                 <ul className='dropdown-content'>
+                                    <div className='p-3'>{loading ? <div className="loading-spiner"></div> : <></>}</div>
                                     {
                                     products.map(({title, image1, unique_id}, index) =>{
                                         return(
@@ -61,23 +64,6 @@ const Navbar = () => {
                                                 <li className='p-3 text-center'>
                                                     <img src={image1} key={index} className="dropdown-img" alt='' style={{ width:70, height:70 }} />
                                                     <h6 className='pt-2'>{title.substring(0,10 )}...</h6>
-                                                </li>
-                                            </Link>
-                                        )
-                                    })
-                                    }                                
-                                </ul>
-                            </li>
-                            <li className='drop-down nav-item px-3'>
-                                <Link to="#" className='drop-link link' >Accessories<i className="fa-solid fa-angle-down px-2"></i></Link>
-                                <ul className='dropdown-content'>
-                                    {
-                                    images.map(({id,src,productName}, index) =>{
-                                        return(
-                                            <Link to={`/product/${id}`} key={index} className='link'>
-                                                <li className='p-3 text-center'>
-                                                    <img src={src} key={id} className="dropdown-img" alt='' style={{ width:70, height:70 }} />
-                                                    <h6 className='pt-2'>{productName}</h6>
                                                 </li>
                                             </Link>
                                         )
@@ -111,7 +97,7 @@ const Navbar = () => {
                             <Link to="/cart" className='link px-3'>
                                 <i  
                                 className="fas fa-shopping-cart px-3"></i>
-                                <span className='cart-product-number'>0</span>
+                                {/* <span className='cart-product-number'>0</span> */}
                             </Link>
                         </div>
                         {/* <div className='d-flex'>

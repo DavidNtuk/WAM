@@ -7,12 +7,13 @@ import {
 // import Footer from "./Component/Footer/Footer";
 // import Home from "./pages/Home/Home";
 import Showcase from "./pages/Showcase"
-import Navbar from "./component/Header/Navbar"
-import Login from "./pages/Login"
-import Signup from "./pages/Signup"
-import Checkout from "./pages/Checkout"
+import Navbar from "./component/Header/Navbar";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Checkout from "./pages/Checkout";
 // import Dashboard from "./pages/Dashboard"
-import Information from "./pages/Information"
+import Information from "./pages/Information";
+import Location from "./pages/Location";
 import Profile from "./pages/Profile";
 import ListPage from "./pages/Home/ListPage"
 import Categories from "./pages/Home/Categories";
@@ -39,6 +40,7 @@ const layout = () => {
                 <Route path="/profile" element={<Profile />}/>
                 {/* <Route path="/dashboard" element={<Dashboard />}/> */}
                 <Route path="/information" element={<Information />}/>
+                <Route path="/location" element={<Location />}/>
                 <Route path="/itemslist" element={<ListPage />}/>
                 <Route path="/categories" element={<Categories />}/>
                 <Route path="/cart" element={<Cart />}/>

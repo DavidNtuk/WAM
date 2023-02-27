@@ -27,11 +27,11 @@ const cartSlice = createSlice({
             }
             localStorage.setItem("cardItem", JSON.stringify(state.products));
         },
-        removeProduct: (state, action) => {
-            state.total -= state.products.find(p => p.unique_id === action.payload).quantity * state.products.find(p => p.unique_id === action.payload).price;
-            state.products = state.products.filter(p => p.unique_id !== action.payload);
-            state.quantity -= 1;
-        },
+        // removeProduct: (state, action) => {
+        //     state.total -= state.products.find(p => p.unique_id === action.payload).find(p => p.unique_id === action.payload)
+        //     state.products = state.products.filter(p => p.unique_id !== action.payload);
+        //     state.quantity -= 1;
+        // },
         emptyProductCart: (state) => {
             state.products = [];
             state.quantity = 0;

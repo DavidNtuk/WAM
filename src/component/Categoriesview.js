@@ -2,7 +2,7 @@ import React from "react";
 // import Home from "./Home/Home";
 // import contact from "../../src/img/contact.jpg"
 import "../App.css"
-import Card from "./Card/Card";
+// import Card from "./Card/Card";
 import Bestsales from "./Bestsales";
 
 
@@ -15,7 +15,7 @@ const Categoriesview = () => {
             </div>
             <div className="info-view">
                 <div className="">
-                    <Card />
+                    {/* <Card /> */}
                 </div>
             </div>
         </div>

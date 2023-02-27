@@ -9,7 +9,7 @@ import "../component/Header/custom.css";
 
 
 
-const Contact = () => {
+const DashboardCategories = () => {
 
     const [product , setProduct] = useState([])
 
@@ -37,16 +37,9 @@ const Contact = () => {
                 product.map(({title},{unique_id}) =>{
                 return(
                     <div className="drop-down-dashboard categories-list">
-                        <Link to={`/product/${unique_id}`} className="link">
+                        <Link to={`/categories/${unique_id}`} className="link">
                             <h6 className="d-inline-block">{title}</h6>
-                        </Link> 
-                        {/* <ul className='dropdown-content-dashboard'>
-                            <Link to="" className='link'>
-                                <li className='p-3 text-center'>
-                                    <h6 className='pt-2'>{title}</h6>
-                                </li>
-                            </Link>                             
-                        </ul>*/}
+                        </Link>
                     </div>
                 )
                 })
@@ -59,4 +52,4 @@ const Contact = () => {
    )
 }
 
-export default Contact
+export default DashboardCategories

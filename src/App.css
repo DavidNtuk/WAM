@@ -23,6 +23,10 @@ background-color: rgb(255, 255, 255);
     
 }
 
+a{
+    color: white;
+}
+
 .slider-img{
     width: 650px;
     position: absolute;
@@ -155,7 +159,7 @@ width: 500px;
 height: 300px;
 padding: 50px 20px;
 backdrop-filter: blur(5px);
-border: 2px lightblue solid;
+border: 2px rgb(173, 216, 230) solid;
 }
 
 .header-text h3{
@@ -172,37 +176,58 @@ letter-spacing: 0em;
 }
 
 .login-card{
-position: absolute;
-top: 30%;
-right: 20%;
 background-color: rgba(0, 0, 0, 0.5);
 width: 400px;
-height: 400px;
+height: 500px;
 padding: 10px 10px;
+background-image: linear-gradient(to bottom,
+    rgb(255, 255, 255),
+    rgb(186, 202, 210)
+);
 }
 
-/* .login input{
-width: 100%;
-border-bottom:1px rgb(255, 255, 255) solid;
-border: 0;
-border-radius: 50px;
-padding: 10px 10px;
-box-shadow: unset 2px 2px;
-} */
+.login-header{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
 
 label{
 display: flex;
 /* justify-content: start; */
 }
 
+.cart-product img{
+    width: 100px;
+    height: 100px;
+}
+
+.signup-header{
+    display: flex;
+    justify-content: center;
+    height: 150vh;
+    align-items: center;
+}
+
 .signup-card{
-position: absolute;
-top: 15%;
-right: 10%;
-background-color: rgba(0, 0, 0, 0.5);
+background-image: linear-gradient(to bottom,
+    rgb(255, 255, 255),
+    rgb(186, 202, 210)
+);
 width: 600px;
-height: 600px;
+height: 750px;
 padding: 10px 10px;
+}
+
+.error-message{
+    color: rgb(255, 0, 0);
+    font-size: 1rem;
+}
+
+.success-message{
+    color: rgb(15, 224, 15);
+    font-size: 1rem;
 }
 
 input[ type= text ]{
@@ -486,6 +511,35 @@ background:rgb(54, 56, 58);
     margin: 0px 0px !important;
 }
 
+
+@keyframes spinner {
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spiner{
+    width: 20px;
+    height: 20px;
+    border: 5px solid red ;
+    border-top: 5px solid rgb(0, 0, 240);
+    border-radius: 50%;
+    animation: spinner 1.5s linear infinite;
+}
+
+.loading-container{
+    height: 50vh;
+    width: 50vh;
+    align-items: center;
+}
+
+.loading-container-end{
+    height: 0px;
+}
+
 @media (max-width: 768px) {
 .header-text{
     width: 100%;
@@ -628,8 +682,8 @@ transition: transform .2s ease;
 }
 
 .slider-img{
-    width: 550px;
-    /* height: 695px; */
+    width: 445px;
+    height: 500px;
     left: 0px;
 }
 
@@ -673,7 +727,20 @@ height: 250px;
 }
 
 .promo-header img{
-    height: 73vh;;
+    height: 73vh;
+}
+
+.titles h3{
+    font-size: 12px;
+}
+
+.cart-product img{
+    width: 50px;
+    height: 50px;
+}
+
+.cart-product h6{
+    font-size:12px;
 }
 
 

@@ -31,11 +31,6 @@ const Contact = () => {
                         <i class="fa-solid fa-user px-3"></i><h5 className="d-inline-block">Favourite</h5>
                     </Link> 
                 </div>
-                <div className="p-3 dashboard-list">
-                    <Link to="/History" className="link">
-                        <i class="fa-solid fa-user px-3"></i><h5 className="d-inline-block">Order History</h5>
-                    </Link> 
-                </div>
             </div>
     </div>
         
