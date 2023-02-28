@@ -17,13 +17,11 @@ const Bestsales = () => {
         try{
             setLoading(true)
             const response = await axios.get('https://api-v1.devchris.com.ng/api/v1/users/products/popular')
-            console.log(response.data.data.products)
             setProduct(response.data.data.products)
             setLoading(false)
         }
         catch{
-            setLoading(false)
-            console.log("error")
+            setLoading(false);
         }
     }
 

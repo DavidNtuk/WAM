@@ -65,8 +65,8 @@ const ProductDescription = ({ product }) => {
                                     <select className="form-control">
                                         <option disabled>- Select a size -</option>
                                         {
-                                            sizes.map(size => (
-                                                <option>{ size }</option>
+                                            sizes.map((size, index) => (
+                                                <option key={index}>{ size }</option>
                                             ))
                                         }
                                     </select>
@@ -82,8 +82,8 @@ const ProductDescription = ({ product }) => {
                                     <select className="form-control">
                                         <option disabled>- Select a color -</option>
                                         {
-                                            colors.map(size => (
-                                                <option>{ size }</option>
+                                            colors.map((size, index) => (
+                                                <option key={index}>{ size }</option>
                                             ))
                                         }
                                     </select>

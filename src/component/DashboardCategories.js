@@ -20,11 +20,10 @@ const DashboardCategories = () => {
     const fetchCategories = async () =>{
         try{
             const response = await axios.get('https://api-v1.devchris.com.ng/api/v1/users/category/list');
-            console.log(response.data.data.categories);
             setProduct(response.data.data.categories);
         }
         catch (error){
-            console.log(error)
+            console.log(error);
         }
     }
 

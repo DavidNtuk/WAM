@@ -3,21 +3,20 @@ import {Link} from "react-router-dom"
 import "../App.css"
 import Button from "./Button/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { emptyProductCart } from "../Redux/reducers/cartReducers";
-import { removeProduct } from "../Redux/reducers/cartReducers";
+import { emptyProductCart, removeProduct } from "../Redux/reducers/cartReducers";
 
 const Cart = () => {
 
- const cart = useSelector((state) => state.cart);
+ const { products, total } = useSelector((state) => state.cart);
 
  const dispatch = useDispatch();
 
  const handleEmptyCart = (product) =>{
-    dispatch(emptyProductCart(product));
+  dispatch(emptyProductCart(product));
  }
 
- const handleRemoveItem =  (product) =>{
-  dispatch( removeProduct(product))
+ const handleRemoveItem =  (unique_id) =>{
+  dispatch(removeProduct(unique_id));
  }
 
   return (
@@ -25,7 +24,7 @@ const Cart = () => {
     <div className="text-center text-md pt-2 pb-5">
       Your Shoping Bag
     </div>
-    {cart.products.length === 0 ? (
+    {products.length === 0 ? (
       <div className="pt-5 text-center border-4">
         <p><i>Your Shoping Cart is Currently Empty...</i></p>
         <Link className="link pt-5" to="/">
@@ -50,12 +49,12 @@ const Cart = () => {
           </div>
           <div className=""> 
             <div className="cart-items">
-              {cart.products?.map(product =>(
-                <div className="cart-item pt-2 pb-2 cart-content">
+              {products?.map(product => (
+                <div className="cart-item pt-2 pb-2 cart-content" key={product.unique_id}>
                   <div className="cart-product row align-items-center">
                     <div className="col-3">
                     <i className="fa fas fa-times px-5"
-                    onClick={() =>handleRemoveItem(product)}
+                    onClick={() =>handleRemoveItem(product.unique_id)}
                     ></i>
                       <img 
                         src={product.image1} 
@@ -85,7 +84,24 @@ const Cart = () => {
                   </div>
                 </div>
               ))}
-            </div>            
+            </div>
+            <div className="cart-items">
+              <div className="cart-item pt-2 pb-2 cart-content">
+                <div className="cart-product row align-items-center">
+                  <div className="col-3">
+                  </div>
+                  <div className="col-3">
+                    <h6><strong>Total Amount</strong></h6>
+                  </div>
+                  <div className="col-3 d-flex">
+                    
+                  </div>
+                  <div className="col-3">
+                    <h6>$ {total}</h6>
+                  </div>  
+                </div>
+              </div>
+            </div>    
           </div>
         </div>
       </>
