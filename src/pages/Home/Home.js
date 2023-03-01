@@ -1,11 +1,11 @@
 //import logo from './logo.svg';
-import React from 'react';
+import React, { Fragment } from 'react';
 import "../../App.css"
 import Button from '../../component/Button/Button';
 
 function Home () {
   return (
-    <React.Fragment>
+    <Fragment>
       <div className='header d-flex'>
         {/* <div className='overlay'></div> */}
         <div className='header-flex d-flex align-items-center'>
@@ -22,7 +22,7 @@ function Home () {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </Fragment>
     
   );
 }

@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const cartSlice = createSlice({
     name: 'cart',
     initialState: {
-        products: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems"))  : [],
+        products: [],
         quantity: 0,
         total: 0,
     },
@@ -25,13 +25,20 @@ const cartSlice = createSlice({
                 state.total += quantity * price;
                 state.quantity += 1
             }
+            state.total = state.total ? state.total : state.products.reduce((a, b) => a + b.amount, 0);
             localStorage.setItem("cardItem", JSON.stringify(state.products));
         },
-        // removeProduct: (state, action) => {
-        //     state.total -= state.products.find(p => p.unique_id === action.payload).find(p => p.unique_id === action.payload)
-        //     state.products = state.products.filter(p => p.unique_id !== action.payload);
-        //     state.quantity -= 1;
-        // },
+        removeProduct: (state, action) => {
+            state.total -= state.products.find(p => p.unique_id === action.payload).amount;
+            state.products = state.products.filter(p => p.unique_id !== action.payload);
+            state.quantity -= 1;
+            localStorage.setItem("cardItem", JSON.stringify(state.products));
+        },
+        reloadCartItems: (state, action) => {
+            state.products = action.payload
+            state.total = action.payload.reduce((a, b) => a + b.amount, 0);
+            state.quantity = action.payload.length;
+        },
         emptyProductCart: (state) => {
             state.products = [];
             state.quantity = 0;
@@ -40,5 +47,5 @@ const cartSlice = createSlice({
     }
 });
 
-export const { addProduct, removeProduct, emptyProductCart } = cartSlice.actions;
+export const { addProduct, removeProduct, reloadCartItems, emptyProductCart } = cartSlice.actions;
 export default cartSlice.reducer;

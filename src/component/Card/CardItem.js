@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import "../../App.css"
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
@@ -19,10 +19,10 @@ const Carditem = () => {
 
     const products = useSelector((state) => state.allProducts.products)
     
-    const renderList = products.map((product) =>{
-        
+    const renderList = products.map((product) => {
 
-    const {unique_id, image1, title, amount, } = product    
+        const {unique_id, image1, title, amount, } = product    
+
         return(
             <div className='m-1 mb-2 product-card' key={unique_id}>
             <div className=''>
@@ -68,7 +68,9 @@ const Carditem = () => {
     })
 
     return(
-       <>{renderList}</> 
+       <Fragment>
+            {renderList}
+        </Fragment>
    )
 }
 

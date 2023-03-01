@@ -22,11 +22,10 @@ const Card = () => {
         try {
             setLoading(true)
             const response = await axios.get('https://api-v1.devchris.com.ng/api/v1/users/products/list');
-            console.log(response.data.data.products.data);
             dispatch(setProducts(response.data.data.products.data));
             setLoading(false)
         } catch (error) {
-            setLoading(false)
+            setLoading(false);
             console.log(error);
         }
     }
@@ -38,9 +37,6 @@ const Card = () => {
             </div>
             <Carditem />
         </div>
-
-
-       
    )
 }
 

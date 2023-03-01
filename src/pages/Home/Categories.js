@@ -8,10 +8,10 @@ import PromoSales from "../../component/PromoSales"
 const Categories = () => {
 
     const location = useLocation();
-    const navigateTo = useNavigate();
+    const navigate = useNavigate();
     const productId = location.pathname.split("/")[2];
+
     console.log(productId)
-    console.log(navigateTo)
 
    return(
     <>

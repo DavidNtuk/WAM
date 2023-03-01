@@ -13,7 +13,7 @@ const Contact = () => {
         <div className="text-center mt-3">
             <div className='navbar-brand'>
                 <h2 className='pt-5 pb-3'>King's Hub</h2>
-                <i class="fa-solid fa-user fa-4x"></i>
+                <i className="fa-solid fa-user fa-4x"></i>
             </div>
             <div> 
                 <h4 className="pb-2">Hello, David</h4>
