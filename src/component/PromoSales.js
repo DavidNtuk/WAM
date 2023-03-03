@@ -5,15 +5,8 @@ import Button from './Button/Button';
 
 function Home () {
   return (
-    <React.Fragment>
+    <div className='promo-sales'>
       <div className='overlay'></div>
-      <div className='promo-header'>
-        <img 
-        src="img/new/lllm.jpeg"
-        className="" 
-        alt='' 
-        />
-      </div>
       <div className='categories-header-text text-light'>
         <h2 className='pb-1 text-lg' >Delivery Nation Wide</h2>
         <h2 className='pb-2 text-md' >Roli Accessories</h2>
@@ -27,7 +20,7 @@ function Home () {
         className="cart-bag-img" 
         alt='' 
       />
-    </React.Fragment>
+    </div>
     
   );
 }
