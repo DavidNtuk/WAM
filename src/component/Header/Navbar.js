@@ -51,6 +51,11 @@ const Navbar = () => {
                     <div className='collapse navbar-collapse justify-content-center close-nav' id='navbar' >
                         <nav>
                             <ul className='ul-links align-items-center'>
+                                <li className='drop-down nav-item px-3'>
+                                    <Link to="/categories" className='link'>
+                                        Categories
+                                    </Link>
+                                </li>
                                 <li className='drop-down nav-item px-3 active'>
                                     <Link to="#" className='drop-link link'>New Arrivals<i className="fa-solid fa-angle-down px-2"></i></Link>
                                     <ul className='dropdown-content'>
