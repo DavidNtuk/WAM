@@ -101,41 +101,18 @@ const Cart = () => {
                   </div>  
                 </div>
               </div>
-            </div>    
+            </div> 
+            <div className="d-flex pb-4 px-5 pt-5 justify-content-center">
+              <Button 
+                title="CheckOut Now" 
+                bgColor="#000000"
+                // onClick={() =>handleEmptyCart()}
+              />
+            </div>   
           </div>
         </div>
       </>
     ) }
-    
-      
-        {/* <div className="checkout-cart-card">
-        <h3 className="p-3">ORDER SUMMARY</h3>
-        <div className="pb-3 pt-3">
-          <div className="d-flex justify-content-between p-3">
-            <h4>Subtotal</h4>
-            <span><h4>$</h4></span>
-          </div>
-          <div className="d-flex justify-content-between p-3">
-            <h4>Estimated Shipping</h4>
-            <span><h4>$</h4></span>
-          </div>
-          <div className="d-flex justify-content-between p-3">
-            <h4>Shipping Discount</h4>
-            <span><h4>$</h4></span>
-          </div>
-        </div>
-          <div className="d-flex justify-content-between p-3">
-            <h4>Total</h4>
-            <span><h4>$</h4></span>
-          </div>
-        <div className="text-center pb-2">
-          <Button 
-            title="CHECKOUT NOW" 
-            bgColor="#000000"
-            />
-        </div>
-      </div>
-      </div> */}
   </>
   )
 };

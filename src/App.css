@@ -677,9 +677,6 @@ transition: transform .2s ease;
     height: auto;    
 }
     
-.cart-product-number{
-  display: none; 
-}
 
 .slider-img{
     width: 445px;
