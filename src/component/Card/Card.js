@@ -5,14 +5,12 @@ import "../../component/Header/custom.css"
 import Carditem from "./CardItem";
 import axios from "axios";
 import { setProducts } from '../../Redux/actions/ProductAction';
-import Pagination from "../Pagination";
 
 
 const Card = () => {
-
-    const [loading, setLoading] = useState(false)
     const dispatch = useDispatch();
-
+    const [loading, setLoading] = useState(false);
+    const [productItems, setProductItems] = useState([]);
 
     useEffect(() => {
         fetchProducts();
@@ -20,10 +18,12 @@ const Card = () => {
 
     const fetchProducts = async () => {
         try {
-            setLoading(true)
+            setLoading(true);
             const response = await axios.get('https://api-v1.devchris.com.ng/api/v1/users/products/list');
-            dispatch(setProducts(response.data.data.products.data));
-            setLoading(false)
+            const { products } = response.data.data;
+            dispatch(setProducts(products.data));
+            setProductItems(products.data);
+            setLoading(false);
         } catch (error) {
             setLoading(false);
             console.log(error);
@@ -35,9 +35,9 @@ const Card = () => {
             <div className="d-flex justify-content-center">
                 <div>{loading ? <div className="loading-spiner loading-container"></div> : <div className=""></div>}</div>
             </div>
-            <Carditem />
+            <Carditem products={productItems}/>
         </div>
    )
 }
 
-export default Card
+export default Card;
