@@ -1,7 +1,7 @@
 .header-nav{
     box-shadow: 0px 10px 80px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    background-color: rgb(186, 202, 210);
+    background-color: rgb(186, 202, 210) ;
 }
 
 li{
@@ -15,8 +15,30 @@ li{
     color: inherit;
 }
 
-.navbar-brand{
-    color: rgb(61, 124, 145);
+.signup-brand{
+ font-weight: 700;
+}
+
+.navbar-love-style{
+    background: -webkit-linear-gradient(0deg,rgb(255, 19, 19) , rgb(182, 57, 57) , rgb(255, 0, 0) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-style{
+    background: -webkit-linear-gradient(0deg,rgb(252, 117, 117) , rgb(0, 0, 0) , rgb(61, 124, 145) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-style-1{
+    background: -webkit-linear-gradient(0deg, rgb(8, 173, 255) , rgb(0, 0, 0) , rgb(250, 17, 17) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+.navbar-brand h2{
     font-weight: 800;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
 }
@@ -80,7 +102,7 @@ li{
     background-color: rgb(61, 124, 145);
     color: rgb(255, 255, 255);
     bottom: 0;
-    width: 100.8%;
+    width: 100%;
     height: auto;
 }
 

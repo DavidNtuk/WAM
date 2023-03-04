@@ -44,7 +44,7 @@ const Cart = () => {
           <div className="titles row pb-5">
             <h3 className="prodct-title col-3">Product</h3>
             <h3 className="prodct-price col-3"></h3>
-            <h3 className="prodct-quantity col-3">Quantity</h3>
+            {/* <h3 className="prodct-quantity col-3">Quantity</h3> */}
             <h3 className="prodct-total col-3">Total</h3>
           </div>
           <div className=""> 
@@ -67,7 +67,7 @@ const Cart = () => {
                       <h6>{product.title}</h6>
                       <span>{product.size}</span>
                     </div>
-                    <div className="col-3 d-flex">
+                    {/* <div className="col-3 d-flex">
                       <div className="">
                         <i
                         className="fas fa-arrow-up arrow-up"></i>
@@ -77,9 +77,9 @@ const Cart = () => {
                         <i
                         className="fas fa-arrow-down arrow-down"></i>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="col-3">
-                      <h6>$ {product.amount}</h6>
+                      <h6>₦{product.amount}</h6>
                     </div>  
                   </div>
                 </div>
@@ -93,11 +93,11 @@ const Cart = () => {
                   <div className="col-3">
                     <h6><strong>Total Amount</strong></h6>
                   </div>
-                  <div className="col-3 d-flex">
+                  {/* <div className="col-3 d-flex">
                     
-                  </div>
+                  </div> */}
                   <div className="col-3">
-                    <h6>$ {total}</h6>
+                    <h6>₦{total}</h6>
                   </div>  
                 </div>
               </div>

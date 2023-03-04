@@ -12,7 +12,7 @@ function Home () {
           <div className='header-text text-dark text-center'>
             <h3 className='pb-1 text-md' >Shop Sales</h3>
             <h3 className='pb-1' >with</h3>
-            <h2 className='pb-4 text-lg' >Roli Accessories</h2>
+            <h2 className='pb-4 text-lg navbar-style pt-2' >Roli Accessories</h2>
             <div className='pt-2'>
               <Button title="Shop now" bgColor="#ADD8E6"/>
             </div>

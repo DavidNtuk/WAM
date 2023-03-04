@@ -36,7 +36,7 @@ const Carditem = ({
                                 <h5 className='px-2'>{`${title.substring(0, 20)}...`}</h5>
                             </Link>
                         </div> 
-                        <h5 className='pb-'>${amount}</h5>
+                        <h5 className='pb-'>₦{amount}</h5>
                     </div>
                     <div className="pt-4 text-center">
                         <Link className="link" to="">
@@ -46,7 +46,7 @@ const Carditem = ({
                             onClick={() =>handleAddToCart(product)}
                             />
                         </Link>
-                        {
+                        {/* {
                             toggle ? 
                             (
                                 <div className="pt-2">
@@ -62,7 +62,7 @@ const Carditem = ({
                                     className="fas fa-heart"></i>
                                 </div> 
                             )                    
-                        }
+                        } */}
                     </div>
                 </div>
             )

@@ -21,13 +21,13 @@ const ProductDescription = ({ product }) => {
     return(
         <>
             <div className="d-flex justify-content-between pb-1">
-                <h2>{title}</h2>
+                <h2 className="navbar-style">{title}</h2>
                 {
                     toggle ?
                     (
                         <div>
                             <i
-                            className="fas fa-heart fa-light fa-2x"
+                            className="fas fa-heart fa-light fa-2x navbar-love-style"
                             onClick={() => setToggle(false)} 
                             ></i>
                         </div>
@@ -40,8 +40,8 @@ const ProductDescription = ({ product }) => {
                     </div>
                 }
             </div>
-            <p className="pb-4">{product_sku}</p>
-            <h2>${ amount }</h2>
+            <p className="pb-4 navbar-style">{product_sku}</p>
+            <h2>₦{ amount }</h2>
             <div className="d-flex align-items-center pt-3 pb-3">
                 <del className="px-1 line-through"><h4>${ promo_price }</h4></del>
                 <h5 className="bg-danger text-light p-1">-{ percentageOff } %</h5>
