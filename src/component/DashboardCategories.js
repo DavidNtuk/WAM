@@ -14,7 +14,7 @@ const DashboardCategories = ({
     };
 
     return (
-        <div className="col-md-3">
+        <div className=" d-flex justify-content-center pt-5 col-md-3 mb-5">
             <div className="dashboardcategories">
                 <h3 className="pt-2 text-start px-3">Categories</h3>      
                 <div className="pt-3">

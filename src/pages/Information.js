@@ -28,7 +28,7 @@ const information = () => {
                         </div>
                         <div className="">
                             <div className="pb-4">
-                                <input type="text" /> 
+                                <input type="text" placeholder="" /> 
                                 <label
                                 className="px-3 pb-2">First Name</label>                                
                             </div>

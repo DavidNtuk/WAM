@@ -8,10 +8,10 @@ import React from 'react'
 const Footer = () => {
     return(    
     <div>
-      <div className='bgcolor row p-5 navbar-light mt-5'>
+      <div className='bgcolor row p-5 navbar-light'>
         <div className='brand col-md-4'>
-            <h2 className='brand text-center'>
-                Welcome<br/>to<br/>Roli Accessories
+            <h2 className='brand text-center navbar-style-1'>
+                Welcome<br/>to<br className=''/>Roli Accessories
             </h2>
         </div>
         <hr className='mt-4'/>

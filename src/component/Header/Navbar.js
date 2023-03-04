@@ -43,7 +43,7 @@ const Navbar = () => {
                             <div className="navbar-toggler-icon"><i className="fas fa-bars"></i></div>
                         </button>
                     </div>
-                    <div className='navbar-brand'>
+                    <div className='navbar-brand navbar-style'>
                         <Link to="/" className="link">
                             <h2 className=''>Roli Accessories</h2>
                         </Link> 

@@ -44,7 +44,7 @@ const Cart = () => {
           <div className="titles row pb-5">
             <h3 className="prodct-title col-3">Product</h3>
             <h3 className="prodct-price col-3"></h3>
-            <h3 className="prodct-quantity col-3">Quantity</h3>
+            {/* <h3 className="prodct-quantity col-3">Quantity</h3> */}
             <h3 className="prodct-total col-3">Total</h3>
           </div>
           <div className=""> 
@@ -67,7 +67,7 @@ const Cart = () => {
                       <h6>{product.title}</h6>
                       <span>{product.size}</span>
                     </div>
-                    <div className="col-3 d-flex">
+                    {/* <div className="col-3 d-flex">
                       <div className="">
                         <i
                         className="fas fa-arrow-up arrow-up"></i>
@@ -77,9 +77,9 @@ const Cart = () => {
                         <i
                         className="fas fa-arrow-down arrow-down"></i>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="col-3">
-                      <h6>$ {product.amount}</h6>
+                      <h6>₦{product.amount}</h6>
                     </div>  
                   </div>
                 </div>
@@ -93,49 +93,26 @@ const Cart = () => {
                   <div className="col-3">
                     <h6><strong>Total Amount</strong></h6>
                   </div>
-                  <div className="col-3 d-flex">
+                  {/* <div className="col-3 d-flex">
                     
-                  </div>
+                  </div> */}
                   <div className="col-3">
-                    <h6>$ {total}</h6>
+                    <h6>₦{total}</h6>
                   </div>  
                 </div>
               </div>
-            </div>    
+            </div> 
+            <div className="d-flex pb-4 px-5 pt-5 justify-content-center">
+              <Button 
+                title="CheckOut Now" 
+                bgColor="#000000"
+                // onClick={() =>handleEmptyCart()}
+              />
+            </div>   
           </div>
         </div>
       </>
     ) }
-    
-      
-        {/* <div className="checkout-cart-card">
-        <h3 className="p-3">ORDER SUMMARY</h3>
-        <div className="pb-3 pt-3">
-          <div className="d-flex justify-content-between p-3">
-            <h4>Subtotal</h4>
-            <span><h4>$</h4></span>
-          </div>
-          <div className="d-flex justify-content-between p-3">
-            <h4>Estimated Shipping</h4>
-            <span><h4>$</h4></span>
-          </div>
-          <div className="d-flex justify-content-between p-3">
-            <h4>Shipping Discount</h4>
-            <span><h4>$</h4></span>
-          </div>
-        </div>
-          <div className="d-flex justify-content-between p-3">
-            <h4>Total</h4>
-            <span><h4>$</h4></span>
-          </div>
-        <div className="text-center pb-2">
-          <Button 
-            title="CHECKOUT NOW" 
-            bgColor="#000000"
-            />
-        </div>
-      </div>
-      </div> */}
   </>
   )
 };
