@@ -151,7 +151,7 @@ function Signup () {
                                     <label htmlFor="" className='px-2'>Comfirm Password</label>
                                 </div>
                             </form>
-                            {error !== "" && <div className='error-message pt-1 pb-1'><i>{error}</i></div>}
+                            {error !== "" && <div className='error-message pt-1 pb-1'>{error}</div>}
                             
                         <h6 className='pt-2 pb-3'>Already have an account<Link to="/login" className='link text-warning'> login here</Link></h6>
                         <div>

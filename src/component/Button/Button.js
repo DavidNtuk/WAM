@@ -6,7 +6,7 @@ const Button = (props) => {
         <button
             style= {{
                 padding:12,
-                 border: borderColor || `1px solid ${ bgColor === `#ffff` ? bgColor: `#ffff` }`,
+                border: borderColor || `2px solid ${ bgColor === `#fff` ? bgColor: `#4d1f23` }`,
                 fontSize: 14,
                 color: color || '#ffff',
                 background:bgColor,

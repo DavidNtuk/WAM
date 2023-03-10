@@ -40,7 +40,7 @@ const Cart = () => {
             onClick={() =>handleEmptyCart()}
           />
         </div>
-        <div>
+        <div className="cart-table m-5">
           <div className="titles row pb-5">
             <h3 className="prodct-title col-3">Product</h3>
             <h3 className="prodct-price col-3"></h3>
@@ -103,11 +103,13 @@ const Cart = () => {
               </div>
             </div> 
             <div className="d-flex pb-4 px-5 pt-5 justify-content-center">
-              <Button 
-                title="CheckOut Now" 
-                bgColor="#000000"
-                // onClick={() =>handleEmptyCart()}
-              />
+              <Link to="/payment" >
+                <Button 
+                  title="CheckOut Now" 
+                  bgColor="#000000"
+                  // onClick={()=> {handdleUsersItem()}}
+                />
+              </Link>
             </div>   
           </div>
         </div>

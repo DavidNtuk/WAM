@@ -1,17 +1,17 @@
 import React from "react";
-// import Home from "./Home/Home";
-// import contact from "../../src/img/contact.jpg"
+import { useSelector } from "react-redux";
 import "../App.css"
 import Button from "../component/Button/Button";
-import Dash from "../pages/Dashboard"
-// import Profile from "../component/Profile-head"
+import Dash from "../pages/Dashboard";
 
 
-const information = () => {
+const Information = () => {
+
+    const {first_name, last_name, email} = useSelector((state) => state.user) ;
 
    return(
     <>
-        <div className="d-flex">
+        <div className="d-flex mb-5">
                 <Dash />
             <div className="p-5 info">
                 <h4 className="pb-3">Your Personal Information</h4>
@@ -28,17 +28,17 @@ const information = () => {
                         </div>
                         <div className="">
                             <div className="pb-4">
-                                <input type="text" placeholder="" /> 
+                                <input type="text" placeholder={first_name} /> 
                                 <label
                                 className="px-3 pb-2">First Name</label>                                
                             </div>
                             <div className="pb-4">
-                                <input type="text" /> 
+                                <input type="text" placeholder={last_name}/> 
                                 <label className="px-3 pb-2">Last Name</label>                                
                             </div>
                         </div>
                         <div className="pb-4">
-                            <input type="email" /> 
+                            <input type="email" placeholder={email}/> 
                             <label className="px-3 pb-2">Email</label>                            
                         </div>
                         <div className="pb-4">
@@ -57,4 +57,4 @@ const information = () => {
    )
 }
 
-export default information
+export default Information

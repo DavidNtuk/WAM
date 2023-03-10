@@ -14,7 +14,7 @@ function Home () {
             <h3 className='pb-1' >with</h3>
             <h2 className='pb-4 text-lg navbar-style pt-2' >Roli Accessories</h2>
             <div className='pt-2'>
-              <Button title="Shop now" bgColor="#ADD8E6"/>
+              <Button title="Shop now" bgColor="#000000"/>
             </div>
           </div>
           <div className='flex-end'>
