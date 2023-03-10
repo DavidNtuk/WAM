@@ -97,7 +97,7 @@ function Login () {
                                 <label htmlFor="" className='px-2'>Password</label>
                             </div>
                         </form> 
-                        {error !== "" && <div className='error-message pt-1 pb-1'><i>{error}</i></div>}
+                        {error !== "" && <div className='error-message pt-1 pb-1'>{error}</div>}
                         <h6 className='pt-2 pb-3'>Don't have an account<Link to="/signup" className='link text-warning'> signup here</Link></h6>
                         <div>
                             <Button 

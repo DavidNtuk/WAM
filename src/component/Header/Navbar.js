@@ -34,6 +34,11 @@ const Navbar = () => {
             {/* <div className='overlay'></div> */}
             <div className='navbar-expand-lg'>
                 <div className='nav-header d-flex justify-content-between pt-4 align-items-center'>
+                    <div className='navbar-brand'>
+                        <Link to="/" className="link">
+                            <h2 className='navbar-style'>Roli Accessories</h2>
+                        </Link> 
+                    </div>
                     <div className='close-nav'>
                         <button 
                             className="navbar-toggler" 
@@ -42,11 +47,6 @@ const Navbar = () => {
                             data-bs-target="#navbar">
                             <div className="navbar-toggler-icon"><i className="fas fa-bars"></i></div>
                         </button>
-                    </div>
-                    <div className='navbar-brand navbar-style'>
-                        <Link to="/" className="link">
-                            <h2 className=''>Roli Accessories</h2>
-                        </Link> 
                     </div>
                     <div className='collapse navbar-collapse justify-content-center close-nav' id='navbar' >
                         <nav>

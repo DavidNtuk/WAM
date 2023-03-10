@@ -21,6 +21,7 @@ import Footer from "./component/Footer";
 // import Test from "./pages/Test";
 import ProductPage from  "./pages/ProductPage";
 import Cart from "./component/Cart";
+import UsingHooksPayment from "./component/UsingHooksPaymment";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -44,6 +45,7 @@ const layout = () => {
                 <Route path="/itemslist" element={<ListPage />}/>
                 <Route path="/categories" element={<Categories />}/>
                 <Route path="/cart" element={<Cart />}/>
+                <Route path="/payment" element={<UsingHooksPayment />}/>
                 {/* <Route path="/test" element={<Test />}/> */}
             </Routes>
             <Footer/>
